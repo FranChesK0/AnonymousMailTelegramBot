@@ -3,7 +3,7 @@ import sys
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-project_directory: str = os.path.dirname(os.path.abspath(__file__)).removesuffix(
+project_directory = os.path.dirname(os.path.abspath(__file__)).removesuffix(
     os.path.join("src", "core")
 )
 
@@ -22,4 +22,4 @@ class Settings(BaseSettings):
     bot: BotSettings = BotSettings()
 
 
-settings: Settings = Settings()
+settings = Settings()
