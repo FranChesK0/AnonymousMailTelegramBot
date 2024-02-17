@@ -10,7 +10,10 @@ project_directory = os.path.dirname(os.path.abspath(__file__)).removesuffix(
 
 class MailSettings(BaseSettings):
     model_config = SettingsConfigDict(
-        env_file=os.path.join(project_directory, ".env"), env_prefix="MAIL_"
+        env_file=os.path.join(project_directory, ".env"),
+        env_file_encoding="utf-8",
+        env_prefix="MAIL_",
+        extra="ignore",
     )
 
     api: str = "xxx"
@@ -18,7 +21,10 @@ class MailSettings(BaseSettings):
 
 class BotSettings(BaseSettings):
     model_config = SettingsConfigDict(
-        env_file=os.path.join(project_directory, ".env"), env_prefix="BOT_"
+        env_file=os.path.join(project_directory, ".env"),
+        env_file_encoding="utf-8",
+        env_prefix="BOT_",
+        extra="ignore",
     )
 
     token: str = "xxx"
@@ -26,13 +32,17 @@ class BotSettings(BaseSettings):
 
 class RedisSettings(BaseSettings):
     model_config = SettingsConfigDict(
-        env_file=os.path.join(project_directory, ".env"), env_prefix="REDIS_"
+        env_file=os.path.join(project_directory, ".env"),
+        env_file_encoding="utf-8",
+        env_prefix="REDIS_",
+        extra="ignore",
     )
 
     host: str = "xxx"
     port: int = 1000
     password: str = "xxx"
     db: int = 0
+    prefix: str = ""
 
 
 class Settings(BaseSettings):
