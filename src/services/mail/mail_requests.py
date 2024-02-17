@@ -50,7 +50,8 @@ class _ReadMessage(NamedTuple):
 
 async def get_mailbox() -> Mailbox:
     """
-    :return: random mailbox.
+    Makes an API request and returns a random mailbox.
+    :return: Mailbox.
     """
     response = await _get_response(_GenRandomMailbox(count_=2))
     login, domain = response[0].split("@")
@@ -59,8 +60,9 @@ async def get_mailbox() -> Mailbox:
 
 async def get_messages(mail: Mailbox) -> list[int]:
     """
-    :param mail: a mail to check for messages.
-    :return: a list of message ids.
+    Makes an API request and returns a list of message ids.
+    :param mail: Mailbox to check for messages.
+    :return: List of message ids.
     """
     response = await _get_response(_GetMessages(mail=mail))
     return [message.get("id", -1) for message in response]
@@ -68,9 +70,10 @@ async def get_messages(mail: Mailbox) -> list[int]:
 
 async def read_message(mail: Mailbox, message_id: int) -> Message:
     """
-    :param mail: a mail from which to get the message.
-    :param message_id: id of the message.
-    :return: message from the mail.
+    Makes an API request and returns a message.
+    :param mail: Mailbox to check for the message.
+    :param message_id: ID of the message.
+    :return: Message.
     """
     response = await _get_response(_ReadMessage(mail=mail, message_id=message_id))
     return Message.model_validate(response)
