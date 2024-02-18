@@ -1,4 +1,22 @@
 repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-merge-conflict
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: detect-private-key
+      - id: check-json
+      - id: pretty-format-json
+      - id: check-toml
+      - id: check-yaml
+
+  - repo: https://github.com/pre-commit/pygrep-hooks
+    rev: v1.10.0
+    hooks:
+      - id: python-check-blanket-noqa
+      - id: python-check-blanket-type-ignore
+
   - repo: local
     hooks:
       - id: isort
