@@ -12,4 +12,3 @@ if not os.path.exists(logs_dir):
 
 config.dictConfig(logger_config)
 logger = logging.getLogger("debug" if settings.debug else "main")
-
