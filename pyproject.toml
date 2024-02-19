@@ -48,6 +48,7 @@ count = true
 
 [tool.mypy]
 mypy_path = "src"
+packages = "tests"
 python_version = "3.12"
 explicit_package_bases = true
 disallow_untyped_defs = true
