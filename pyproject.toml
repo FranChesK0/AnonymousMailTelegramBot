@@ -5,6 +5,7 @@ description = ""
 authors = ["FranChesKo <dev.franchesko@gmail.com>"]
 license = "Apache-2.0"
 readme = "README.md"
+packages = [{include = "src"}]
 
 [tool.poetry.dependencies]
 python = "~3.12.1"
