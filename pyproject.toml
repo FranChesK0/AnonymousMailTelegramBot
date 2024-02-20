@@ -11,6 +11,7 @@ packages = [{include = "src"}]
 python = "~3.12.1"
 aiogram = "~3.4.1"
 aiohttp = "~3.9.3"
+fluentogram = "~1.1.6"
 pydantic = "~2.5.3"
 pydantic-settings = "~2.2.0"
 redis = "~5.0.1"
