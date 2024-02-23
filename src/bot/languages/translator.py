@@ -21,6 +21,9 @@ class Text(Enum):
 
     THROTTLING_MESSAGE: str = "throttling-message"
 
+    MAIL_EXISTS: str = "mail-exists"
+    MAIL_CREATED: str = "mail-created"
+
 
 class Translator:
     def __init__(self) -> None:
