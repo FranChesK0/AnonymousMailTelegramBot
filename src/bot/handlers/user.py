@@ -13,5 +13,5 @@ async def start_command(message: Message, translator: LocalizedTranslator) -> No
 
 
 @router.message(Command(commands="help"))
-async def mail_command(message: Message, translator: LocalizedTranslator) -> None:
+async def help_command(message: Message, translator: LocalizedTranslator) -> None:
     await message.answer(text=translator.get("help_command"))
