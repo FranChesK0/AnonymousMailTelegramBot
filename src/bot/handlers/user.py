@@ -45,4 +45,4 @@ async def mail_command(message: Message, translator: LocalizedTranslator) -> Non
     await set_value(f"{mail_key}-number", 0, expire=datetime.timedelta(minutes=45))
 
     await message.answer(text=translator.get(Text.MAIL_CREATED, mailbox=new_mailbox.mail))
-    logger.info(f"Create {new_mailbox=} for user={user.id}")
+    logger.info(f"Created {new_mailbox=} for user={user.id}.")
