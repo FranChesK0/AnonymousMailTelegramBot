@@ -12,6 +12,8 @@ from fluent_compiler.bundle import FluentBundle  # type: ignore[import-untyped]
 
 from core import settings
 
+locales_dir = os.path.join(settings.project_directory, "resources", "locales")
+
 
 class Translator:
     def __init__(self) -> None:
@@ -22,22 +24,14 @@ class Translator:
                     locale="en",
                     translator=FluentBundle.from_files(
                         locale="en-US",
-                        filenames=[
-                            os.path.join(
-                                settings.project_directory, "data", "locales", "en.ftl"
-                            )
-                        ],
+                        filenames=[os.path.join(locales_dir, "en.ftl")],
                     ),
                 ),
                 FluentTranslator(
                     locale="ru",
                     translator=FluentBundle.from_files(
                         locale="ru-RU",
-                        filenames=[
-                            os.path.join(
-                                settings.project_directory, "data", "locales", "ru.ftl"
-                            )
-                        ],
+                        filenames=[os.path.join(locales_dir, "ru.ftl")],
                     ),
                 ),
             ],
