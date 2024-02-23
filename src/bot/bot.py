@@ -1,6 +1,7 @@
 from aiogram import Bot, Dispatcher
 
 from core import settings
+from bot.languages import Translator
 
 
 async def run() -> None:
@@ -8,4 +9,4 @@ async def run() -> None:
     dispatcher = Dispatcher()
 
     await bot.delete_webhook(drop_pending_updates=True)
-    await dispatcher.start_polling(bot)
+    await dispatcher.start_polling(bot, translator=Translator())
