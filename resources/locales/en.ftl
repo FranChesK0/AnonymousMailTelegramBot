@@ -1,4 +1,4 @@
-start_command = Hello!
-help_command = Bot description.
+start-command = Hello!
+help-command = Bot description.
 
-throttling_message = Too many requests.
+throttling-message = Too many requests.

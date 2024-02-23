@@ -1,5 +1,5 @@
 import os
-from typing import Any
+from enum import Enum
 
 # TODO: Remove ignore when stubs will be added to fluentogram
 #  (2 imports and __init__ argument)
@@ -13,6 +13,13 @@ from fluent_compiler.bundle import FluentBundle  # type: ignore[import-untyped]
 from core import settings
 
 locales_dir = os.path.join(settings.project_directory, "resources", "locales")
+
+
+class Text(Enum):
+    START_COMMAND: str = "start-command"
+    HELP_COMMAND: str = "help-command"
+
+    THROTTLING_MESSAGE: str = "throttling-message"
 
 
 class Translator:
@@ -50,5 +57,5 @@ class LocalizedTranslator:
     ) -> None:
         self._translator = translator
 
-    def get(self, key: str, **kwargs: Any) -> str:
-        return str(self._translator.get(key, **kwargs))
+    def get(self, key: Text, **kwargs: str) -> str:
+        return str(self._translator.get(key.value, **kwargs))
